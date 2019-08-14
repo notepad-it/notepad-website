@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<style>
+    .button {
+        background-color: #edc384;
+        border-radius: 13px;
+        border: 1px solid #edc384;
+        display: inline-block;
+        cursor: pointer;
+        color: #000000;
+        font-family: Trebuchet MS;
+        font-size: 17px;
+        padding: 16px 36px;
+        text-decoration: none;
+        text-shadow: -22px 1px 0px #edc384;
+    }
+
+    /* Flex styles -------------------------------------------------*/
+    header {
+        display: flex;
+        align-items: center;
+    }
+
+    @media (min-width: 700px) {
+        .leading {
+            display: flex;
+            align-items: center;
+        }
+    }
+
+
+    /* Grid styles -------------------------------------------------*/
+    .cards {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
+        grid-gap: 10px;
+    }
+
+
+    /* Generic styles ----------------------------------------------*/
+    body {
+        font-family: 'Quicksand', sans-serif;
+    }
+
+    header {
+        padding: 10px;
+        font-size: 2em;
+        color: white;
+        background-color: #333;
+    }
+
+    .logo {
+        height: 50px;
+        margin-right: 20px;
+    }
+
+    .leading {
+        height: 240px;
+        margin-bottom: 30px;
+        padding: 30px;
+        color: white;
+        background: url('https://cdn.glitch.com/a5121e34-96b3-4a70-8227-040c51e64fae%2Fcat.jpg?1509635989509') center #333 no-repeat;
+        background-size: cover;
+        color: white;
+        text-shadow: 0px 0px 5px #000;
+    }
+
+    .leading-bigtext {
+        margin-right: 60px;
+        font-weight: bold;
+        font-size: 24vw;
+    }
+
+    @media (min-width: 700px) {
+        .leading-bigtext {
+            font-size: 140px;
+        }
+    }
+
+    .leading-text {
+        max-width: 900px;
+        font-size: 1.2em;
+        line-height: 1.4em;
+    }
+
+    .cards {
+        max-width: 960px;
+        margin: 0 auto 30px;
+    }
+
+    article {
+        position: relative;
+    }
+
+    .article-img {
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .article-title {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        padding: 10px;
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+</style>
+
+<script>
+
+    var selectedOptions = [];
+    var favStyle;
+
+    var minimalist = 0;
+    var industrial = 0;
+    var boho = 0;
+    var rustic = 0;
+    var modern = 0;
+    var scandinavian = 0;
+    var vintage = 0;
+
+    function addClassToImage(element) {
+        var innerImage = element.querySelector('img');
+        var id = element.parentNode.id;
+        if (innerImage) {
+            var index = selectedOptions.indexOf(id);
+            if (innerImage.classList.contains('clicked')) {
+                innerImage.classList.remove('clicked');
+                var index = selectedOptions.indexOf(id);
+                if (index > -1) {
+                    selectedOptions.splice(index, 1);
+                }
+            }
+            else {
+                innerImage.classList.add('clicked');
+                var x = selectedOptions.length;
+                selectedOptions[x] = id;
+                console.log(id);
+                console.log(selectedOptions);
+            }
+
+            if (id.includes("minimalist")) {
+                minimalist++;
+            }
+
+            else if (id.includes("industrial")) {
+                industrial++;
+            }
+
+            else if (id.includes("boho")) {
+                boho++;
+            }
+
+            else if (id.includes("rustic")) {
+                rustic++;
+            }
+
+            else if (id.includes("modern")) {
+                modern++;
+            }
+
+            else if (id.includes("scandinavian")) {
+                scandinavian++;
+            }
+
+            else if (id.includes("vintage")) {
+                vintage++;
+            }
+
+        }
+    }
+
+    function nextQuestion() {
+        if (selectedOptions.length < 3) {
+            alert("You must pick at least 3 options");
+        }
+
+        else {
+            var max = Math.max(minimalist, industrial, boho, rustic, modern, scandinavian, vintage);
+
+            if (max == minimalist) {
+                localStorage.setItem('favoruite-styles', JSON.stringify("minimalist"));
+            }
+
+            else if (max == industrial) {
+                localStorage.setItem('favoruite-styles', JSON.stringify("industrial"));
+            }
+
+            else if (max == boho) {
+                localStorage.setItem('favoruite-styles', JSON.stringify("boho"));
+            }
+
+            else if (max == rustic) {
+                localStorage.setItem('favoruite-styles', JSON.stringify("rustic"));
+            }
+
+            else if (max == modern) {
+                localStorage.setItem('favoruite-styles', JSON.stringify("modern"));
+            }
+
+            else if (max == scandinavian) {
+                localStorage.setItem('favoruite-styles', JSON.stringify("scandinavian"));
+            }
+
+            else if (max == vintage) {
+                localStorage.setItem('favoruite-styles', JSON.stringify("vintage"));
+            }
+
+
+            window.location.href = "https://manilva.co/q2-favourite-colour-palette/";
+        }
+    }
+
+</script>
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Manilva Quiz</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/reset.css">
+
+    <link rel="stylesheet" href="/styles.css">
+
+    <script src="/script.js" defer></script>
+</head>
+
+<body>
+    <main>
+        <section class="cards">
+            <article>
+                <a href="javascript:;" onclick="addClassToImage(this)"> <img class="article-img"
+                        src="http://placekitten.com/305/205" alt=" "></a>
+            </article>
+            <article>
+                <a href="javascript:;" onclick="addClassToImage(this)"> <img class="article-img"
+                        src="http://placekitten.com/305/205" alt=" "></a>
+            </article>
+            <article>
+                <a href="javascript:;" onclick="addClassToImage(this)"> <img class="article-img"
+                        src="http://placekitten.com/305/205" alt=" "></a>
+            </article>
+            <article>
+                <a href="javascript:;" onclick="addClassToImage(this)"> <img class="article-img"
+                        src="http://placekitten.com/305/205" alt=" "></a>
+            </article>
+            <article>
+                <a href="javascript:;" onclick="addClassToImage(this)"> <img class="article-img"
+                        src="http://placekitten.com/305/205" alt=" "></a>
+            </article>
+            <article>
+                <a href="javascript:;" onclick="addClassToImage(this)"> <img class="article-img"
+                        src="http://placekitten.com/305/205" alt=" "></a>
+            </article>
+            <article>
+                <a href="javascript:;" onclick="addClassToImage(this)"> <img class="article-img"
+                        src="http://placekitten.com/305/205" alt=" "></a>
+            </article>
+            <article>
+                <a href="javascript:;" onclick="addClassToImage(this)"> <img class="article-img"
+                        src="http://placekitten.com/305/205" alt=" "></a>
+            </article>
+            <article>
+                <a href="javascript:;" onclick="addClassToImage(this)"> <img class="article-img"
+                        src="http://placekitten.com/305/205" alt=" "></a>
+            </article>
+            <article>
+                <a href="javascript:;" onclick="addClassToImage(this)"> <img class="article-img"
+                        src="http://placekitten.com/305/205" alt=" "></a><img class="article-img"
+                    src="http://placekitten.com/310/210" alt=" " />
+            </article>
+            <article>
+                <a href="javascript:;" onclick="addClassToImage(this)"> <img class="article-img"
+                        src="http://placekitten.com/305/205" alt=" "></a>
+            </article>
+            <article>
+                <a href="javascript:;" onclick="addClassToImage(this)"> <img class="article-img"
+                        src="http://placekitten.com/305/205" alt=" "></a>
+            </article>
+            <article>
+                <img class="article-img" src="http://placekitten.com/330/240" alt=" " />
+            </article>
+            <article>
+                <img class="article-img" src="http://placekitten.com/280/250" alt=" " />
+            </article>
+            <article>
+                <img class="article-img" src="http://placekitten.com/310/210" alt=" " />
+            </article>
+            <article>
+                <img class="article-img" src="http://placekitten.com/305/205" alt=" " />
+            </article>
+            <article>
+                <img class="article-img" src="http://placekitten.com/320/220" alt=" " />
+            </article>
+            <article>
+                <img class="article-img" src="http://placekitten.com/330/240" alt=" " />
+            </article>
+            <article>
+                <img class="article-img" src="http://placekitten.com/280/250" alt=" " />
+            </article>
+            <article>
+                <img class="article-img" src="http://placekitten.com/310/210" alt=" " />
+            </article>
+        </section>
+    </main>
+
+    <div class="wrapper">
+        <button onclick="nextQuestion()" class="button" type="submit" name="action">Next Question</button>
+</body>
+
+</html>
