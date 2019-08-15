@@ -9,7 +9,7 @@
     integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
   <!---Website Title-->
-  <title>Notepad</title>
+  <title>Padd</title>
 </head>
 
 <body>
@@ -21,18 +21,13 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarMenu">
-        <!---Search Bar-->
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="search" placeholder="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        <!---Notepad Branding-->
-        <ul class="nav navbar-nav navbar-center">
+        <!---Padd Branding-->
+        <ul class="nav navbar-nav">
           <li><a class="navbar-brand" href="#"><img src="images\notepad-logo2.png" alt="Notepad Logo"
                 style="width:150px;"></a></li>
         </ul>
         <!---Navigation Links-->
-        <ul class="navbar-nav ml-auto">
+        <ul class="navbar-nav">
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarProductDropdown" role="button" data-toggle="dropdown"
               aria-haspopup="true" aria-expanded="false">
@@ -50,6 +45,13 @@
           <li class="nav-item">
             <a class="nav-link" href="#">Create Padd</a>
           </li>
+        </ul>
+        <!---Search Bar-->
+        <ul class="nav navbar-nav ml-auto">
+          <form class="form-inline my-2 my-lg-0 auto">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+          </form>
           <!---User Profile-->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarAvatarDropdown" role="button" data-toggle="dropdown"
@@ -57,8 +59,7 @@
               <img src="images\man.png" class="avatar">
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarAvatarDropdown">
-              <a class="nav-link" href="#" id="navbarUserPic" role="button" aria-haspopup="true"
-                aria-expanded="false">
+              <a class="nav-link" href="#" id="navbarUserPic" role="button" aria-haspopup="true" aria-expanded="false">
                 <img src="images\man.png" class="avatar">
               </a>
               <a class="dropdown-item text-center" href="#"><b>@Peter</b></a>
