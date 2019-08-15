@@ -82,6 +82,23 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
+  <!---Firebase SDK-->
+  <script src="https://www.gstatic.com/firebasejs/6.3.5/firebase-app.js"></script>
+
+  <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#config-web-app -->
+  <script>
+    var firebaseConfig = {
+      apiKey: "AIzaSyAY5wLj8AaQrhuIO2EOo4dSRkMJokUq3Yk",
+      authDomain: "notepad-it.firebaseapp.com",
+      databaseURL: "https://notepad-it.firebaseio.com",
+      projectId: "notepad-it",
+      storageBucket: "notepad-it.appspot.com",
+      messagingSenderId: "975709176926",
+      appId: "1:975709176926:web:c1aca8fc0c4f7db7"
+    };
+    firebase.initializeApp(firebaseConfig);
+  </script>
 </body>
 
 </html>
