@@ -34,7 +34,7 @@
         <!---Navigation Links-->
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Discover Notepads</a>
+            <a class="nav-link" href="#">Discover Padds</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarProductDropdown" role="button" data-toggle="dropdown"
@@ -47,6 +47,10 @@
               <a class="dropdown-item" href="#">Decor</a>
             </div>
           </li>
+          <!---Create New Notepad-->
+          <li class="nav-item">
+            <a class="nav-link" href="#"><img src="images\create_notepad.png" class="newPaddButton"></a>
+          </li>
           <!---User Profile-->
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" id="navbarAvatarDropdown" role="button" data-toggle="dropdown"
@@ -54,9 +58,12 @@
               <img src="images\man.png" class="avatar">
             </a>
             <div class="dropdown-menu" aria-labelledby="navbarAvatarDropdown">
-              <a class="dropdown-item" href="#">Profile</a>
-              <a class="dropdown-item" href="#">My Notepads</a>
-              <a class="dropdown-item" href="#">Create New Notepad</a>
+              <a class="nav-link" href="#" id="navbarAvatarDropdown" role="button"
+                aria-haspopup="true" aria-expanded="false">
+                <span><img src="images\man.png" class="avatar"></span><b>@Peter</b>
+              </a>
+              <div class="dropdown-divider"></div>
+              <a class="dropdown-item" href="#">View Padds</a>
               <div class="dropdown-divider"></div>
               <a class="dropdown-item" href="#">Sign Out</a>
             </div>

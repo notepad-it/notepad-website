@@ -35,9 +35,59 @@
   
   .avatar img {
     border-radius: inherit;
+    margin-right:20px;
     width: inherit;
     height: inherit;
     display: block;
     position: relative;
     z-index: 998;
   }
+
+  .newPaddButton {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    box-shadow:
+      inset 0 0 0 2px rgba(255,255,255,0.6), 
+      0 1px 1px rgba(0,0,0,0.1);
+    background-color: transparent !important;
+    z-index: 999;
+  }
+  
+  .newPaddButton img {
+    border-radius: inherit;
+    width: inherit;
+    height: inherit;
+    display: block;
+    position: relative;
+    z-index: 998;
+  }
+
+  .dropdown-menu {
+    width:250px
+  }
+
+@media screen and (max-widht: 780px) 
+{
+    dropdown-menu {
+        max-width:100%
+  }
+}
+
+.big-box,
+.mini-box {
+    margin: 2px;
+    align-content: left;
+    font-size: 1em;
+}
+.big-box {
+    height: 65px;
+    width: 50px;
+    line-height: 65px;
+}
+.mini-box {
+
+    height: 30px;
+    width: 200px;
+    line-height: 30px;
+}
