@@ -64,7 +64,11 @@
   }
 
   .dropdown-menu {
-    width:250px
+    width:200px
+  }
+
+  #navbarUserPic{
+    transform: translateX(68px);
   }
 
 @media screen and (max-widht: 780px) 
@@ -74,20 +78,16 @@
   }
 }
 
-.big-box,
-.mini-box {
-    margin: 2px;
-    align-content: left;
-    font-size: 1em;
+.navBarBrand {
+  list-style: none;
+  position: absolute;
+  align-content: center;
+  padding: 0;
+  z-index: 1;
 }
-.big-box {
-    height: 65px;
-    width: 50px;
-    line-height: 65px;
-}
-.mini-box {
 
-    height: 30px;
-    width: 200px;
-    line-height: 30px;
+@media screen AND (min-width:991px) {
+  .navBarBrand {
+    padding: 6px 0px;
+  }
 }
